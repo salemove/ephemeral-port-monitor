@@ -36,11 +36,11 @@ print_metrics() {
   #
   # This is similar to `sort -u | uniq -c | awk '...'` but using awk for
   # counting is a lot faster.
-  awk '
+  awk -v min="$MIN_COUNT_TO_TRACK" '
     { uniques[$1]++ }
     END {
       for(key in uniques)
-        if (uniques[key] >= ENVIRON["MIN_COUNT_TO_TRACK"])
+        if (uniques[key] >= min)
           printf("system.net.used_ports.count{local_ip_with_peer=\"%s\"} %s\n", key, uniques[key])
     }
   '
