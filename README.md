@@ -1,5 +1,7 @@
 # Ephemeral Port Monitor
 
+![Docker Image Version (latest semver)](https://img.shields.io/docker/v/salemove/ephemeral-port-monitor)
+
 This tool helps to monitor ephemeral port exhaustion. See
 https://making.pusher.com/ephemeral-port-exhaustion-and-how-to-avoid-it/ for
 more details about what is and how ephemeral port exhaustion happens.
