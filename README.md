@@ -55,11 +55,3 @@ spec:
         path: /healthz
         port: http
 ```
-
-## Releasing a new version
-
-```bash
-docker build .
-docker tag <BUILD_ID> salemove/ephemeral-port-monitor:0.1.0
-docker push salemove/ephemeral-port-monitor:0.1.0
-```
