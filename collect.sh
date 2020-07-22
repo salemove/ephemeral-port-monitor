@@ -41,15 +41,15 @@ print_metrics() {
     END {
       for(key in uniques)
         if (uniques[key] >= min)
-          printf("system.net.used_ports.count{local_ip_with_peer=\"%s\"} %s\n", key, uniques[key])
+          printf("system_net_used_ports_count{local_ip_with_peer=\"%s\"} %s\n", key, uniques[key])
     }
   '
 }
 
-echo "# TYPE system.net.used_ports.max_count gauge"
-echo "system.net.used_ports.max_count $((max_local_port-min_local_port))"
+echo "# TYPE system_net_used_ports_max_count gauge"
+echo "system_net_used_ports_max_count $((max_local_port-min_local_port))"
 
-echo "# TYPE system.net.used_ports.count gauge"
+echo "# TYPE system_net_used_ports_count gauge"
 fetch_connections | \
   format_connection_to_local_ip_with_peer | \
   print_metrics
