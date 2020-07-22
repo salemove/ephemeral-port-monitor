@@ -23,7 +23,10 @@ metadata:
         {
           "prometheus_url": "http://%%host%%:9090/metrics",
           "namespace": "transporter",
-          "metrics": ["system.net.used_ports.max_count", "system.net.used_ports.count"]
+          "metrics": [
+            {"system_net_used_ports_max_count": "system.net.used_ports.max_count"},
+            {"system_net_used_ports_count": "system.net.used_ports.count"}
+          ]
         }
       ]
 ```
